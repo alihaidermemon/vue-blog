@@ -139,6 +139,7 @@ export default {
         });
     },
     editBlog(id) {
+      const vm = this;
       vm.$router.push("blog/edit/" + id);
     },
     deleteBlog(id) {
