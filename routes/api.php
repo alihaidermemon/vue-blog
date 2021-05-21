@@ -19,6 +19,15 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
  
+Route::get('/clear-cache', function () {
+    Artisan::call('config:clear');
+    Artisan::call('view:clear');
+    Artisan::call('route:clear');
+    Artisan::call('clear-compiled');
+    Artisan::call('config:cache');
+    // config:clear
+    // return what you want
+});
 
 // Blog
 Route::group([

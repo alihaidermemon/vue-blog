@@ -175,6 +175,8 @@ export default {
                 "Something Went Wrong! Please try again later."
               );
             });
+          this.blogs = {};
+          this.isLoader = true;
           this.blogList();
         } else {
           return false;

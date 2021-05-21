@@ -2015,7 +2015,7 @@ __webpack_require__.r(__webpack_exports__);
 
       var vm = this;
       this.isLoader = true;
-      this.axios.post(api_url() + "blog/create", this.blog).then(function (response) {
+      this.axios.post("/api/blog/create", this.blog).then(function (response) {
         if (response.data.success) {
           sweetAlertToastr("success", response.data.message);
           setTimeout(function () {
@@ -2172,7 +2172,7 @@ __webpack_require__.r(__webpack_exports__);
 
       var vm = this;
       this.isLoader = true;
-      this.axios.post(api_url() + "blog/update", this.blog).then(function (response) {
+      this.axios.post("/api/blog/update", this.blog).then(function (response) {
         if (response.data.success) {
           sweetAlertToastr("success", response.data.message);
           setTimeout(function () {
@@ -2379,6 +2379,9 @@ var vm = undefined;
             // console.log(error);
             sweetAlertToastr("error", "Something Went Wrong! Please try again later.");
           });
+
+          _this3.blogs = {};
+          _this3.isLoader = true;
 
           _this3.blogList();
         } else {

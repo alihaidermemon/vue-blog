@@ -76,7 +76,7 @@ export default {
       this.isLoader = true;
 
       this.axios
-        .post(api_url() + "blog/create", this.blog)
+        .post("/api/blog/create", this.blog)
         .then(function (response) {
           if (response.data.success) {
             sweetAlertToastr("success", response.data.message);

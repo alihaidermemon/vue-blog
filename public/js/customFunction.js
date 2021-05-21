@@ -13,20 +13,3 @@ function sweetAlertToastr(type, message = "") {
         text: message,
     });
 }
-
-function api_url(value = '') {
-    if (value == '') {
-        return "http://localhost:8000/api/";
-    } else {
-        return "http://localhost:8000/api/" + value;
-    }
-
-}
-function base_url(value = '') {
-    if (value == '') {
-        return "http://localhost:8000/";
-    } else {
-        return "http://localhost:8000/" + value;
-    }
-
-}

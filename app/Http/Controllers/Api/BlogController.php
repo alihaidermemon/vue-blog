@@ -92,9 +92,9 @@ class BlogController extends Controller
             }
             // pagination
             if (isset($input['perPage']) && $input['perPage'] != "") {
-                $blog = $blog->paginate($input['perPage']);
+                $blog = $blog->latest()->paginate($input['perPage']);
             } else {
-                $blog = $blog->paginate($this->noOfRecordPerPage);
+                $blog = $blog->latest()->paginate($this->noOfRecordPerPage);
             }
             // data
             return Helper::successResponse($blog, 'Successfully Get Blog.');
