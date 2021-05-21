@@ -2350,7 +2350,6 @@ var vm = undefined;
       });
     },
     editBlog: function editBlog(id) {
-      var vm = this;
       vm.$router.push("blog/edit/" + id);
     },
     deleteBlog: function deleteBlog(id) {
@@ -2382,8 +2381,9 @@ var vm = undefined;
 
           _this3.blogs = {};
           _this3.isLoader = true;
-
-          _this3.blogList();
+          setTimeout(function () {
+            _this3.blogList();
+          }, 1000);
         } else {
           return false;
         }

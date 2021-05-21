@@ -139,7 +139,6 @@ export default {
         });
     },
     editBlog(id) {
-      const vm = this;
       vm.$router.push("blog/edit/" + id);
     },
     deleteBlog(id) {
@@ -177,7 +176,9 @@ export default {
             });
           this.blogs = {};
           this.isLoader = true;
-          this.blogList();
+          setTimeout(() => {
+            this.blogList();
+          }, 1000);
         } else {
           return false;
         }
